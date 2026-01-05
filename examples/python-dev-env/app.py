@@ -29,12 +29,15 @@ def display_stats(data):
     """Display repository statistics in a pretty table"""
     
     # Create main info panel
+    license = data.get('license') or {}
+    license_name = license.get('name', 'None') if isinstance(license, dict) else 'None'
+
     info = f"""
 [bold cyan]Repository:[/bold cyan] {data['full_name']}
 [bold cyan]Description:[/bold cyan] {data.get('description', 'No description')}
 [bold cyan]Created:[/bold cyan] {data['created_at'][:10]}
 [bold cyan]Language:[/bold cyan] {data.get('language', 'N/A')}
-[bold cyan]License:[/bold cyan] {data.get('license', {}).get('name', 'None')}
+[bold cyan]License:[/bold cyan] {license_name}
     """
     
     console.print(Panel(info, title="📊 Repository Information", border_style="cyan"))
