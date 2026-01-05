@@ -1,6 +1,7 @@
 # Quick Package Testing
 
 **Time:** 10 minutes  
+**Prerequisites:** Nix installed ([Installation Guide](00-installation.md))  
 **Goal:** Learn how to instantly test tools without installing them permanently or creating a shell.nix
 
 ## The Idea

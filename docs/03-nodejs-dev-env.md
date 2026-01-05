@@ -1,6 +1,7 @@
 # Node.js Development Environment
 
 **Time:** 15 minutes  
+**Prerequisites:** Nix installed ([Installation Guide](00-installation.md)) + [nix-shell Basics](01-nix-shell-basics.md)  
 **Goal:** Create a Node.js dev environment with specific versions using nix-shell
 
 ## Scenario

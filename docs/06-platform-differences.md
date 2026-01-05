@@ -1,6 +1,7 @@
 # Platform Differences
 
 **Reference:** 5 minutes  
+**Prerequisites:** Nix installed ([Installation Guide](00-installation.md))  
 **Goal:** Understand how Nix works differently across Linux, macOS, and WSL
 
 ## Quick Comparison

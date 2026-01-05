@@ -1,6 +1,7 @@
 # Full-Stack Development Environment
 
 **Time:** 20 minutes  
+**Prerequisites:** Nix installed ([Installation Guide](00-installation.md)) + [nix-shell Basics](01-nix-shell-basics.md)  
 **Goal:** Create a development environment with both Python backend and Node.js frontend
 
 ## How Does This Work?

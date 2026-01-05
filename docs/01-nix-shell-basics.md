@@ -1,6 +1,7 @@
 # Nix-Shell Basics
 
 **Time:** 10 minutes  
+**Prerequisites:** Nix installed ([Installation Guide](00-installation.md))  
 **Goal:** Understand what nix-shell does and create your first isolated development environment
 
 ## What is nix-shell?
