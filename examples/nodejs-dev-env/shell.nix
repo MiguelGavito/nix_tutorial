@@ -1,18 +1,24 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  name = "nodejs-dev";
+  name = "nodejs-api-monitor";
   
+  # These are the tools Nix provides for you
   buildInputs = with pkgs; [
     nodejs_20
     nodePackages.npm
-    nodePackages.pnpm
   ];
   
   shellHook = ''
-    echo "⚡ Node.js Development Environment"
-    node --version
-    npm --version
-    echo "Try: npm init -y && npm install express"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚡ API Health Monitor Environment Ready!"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "Node:   $(node --version)"
+    echo "npm:    $(npm --version)"
+    echo ""
+    echo "First time? Run: npm install"
+    echo "Then run: node app.js"
+    echo "Then: Open http://localhost:3000"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   '';
 }

@@ -21,22 +21,43 @@ Once Nix is installed, follow these tutorials in order:
 
 ### Step 3: Try Working Examples
 
-All examples are ready to use - just clone the repo and run:
+All examples have ACTUAL code files ready to run:
 
 ```bash
 git clone https://github.com/MiguelGavito/nix_tutorial
 cd nix_tutorial/examples/python-dev-env
 
-# Enter the environment
+# Enter the environment (Nix provides Python + Flask)
 nix-shell
 
-# You now have Python + Flask ready to use!
+# Run the app (already written, just execute it)
+python3 app.py
+
+# Open http://localhost:5000
 ```
 
 **Available examples:**
-- `examples/python-dev-env/` - Flask development
-- `examples/nodejs-dev-env/` - Node.js development  
-- `examples/fullstack-stack/` - Python backend + Node frontend
+- `examples/python-dev-env/` - Flask API with actual code
+- `examples/nodejs-dev-env/` - Express server with actual code  
+- `examples/fullstack-stack/` - Combined example (advanced)
+
+Each example has:
+- ✅ Real code files (no copy-paste in terminal)
+- ✅ Clear README with step-by-step instructions
+- ✅ Cleanup instructions
+
+### Cleanup After Examples
+
+If you get confused or want to start fresh:
+
+```bash
+# Kill all running servers and clean up
+./cleanup.sh
+
+# Or manually:
+# Press Ctrl+C to stop servers
+# Type 'exit' to leave nix-shell
+```
 
 ### Reference Projects
 

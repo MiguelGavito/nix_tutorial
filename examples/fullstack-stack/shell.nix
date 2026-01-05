@@ -10,9 +10,9 @@ pkgs.mkShell {
     
     # Backend
     python3
-    python3Packages.pip
     python3Packages.flask
     python3Packages.flask-cors
+    python3Packages.psutil
     
     # Utilities
     git
@@ -20,11 +20,14 @@ pkgs.mkShell {
   ];
   
   shellHook = ''
-    echo "🚀 Full-Stack Development Environment"
+    echo "🚀 Full-Stack Dev Environment (Ready)"
     echo "Frontend: Node $(node --version)"
     echo "Backend:  Python $(python3 --version)"
+    echo "Backend exposes system stats on port 5000"
+    echo "Frontend dashboard runs on port 3000"
     echo ""
-    echo "Try: python3 backend.py &"
-    echo "Then: node frontend.js"
+    echo "Start backend: python3 backend.py"
+    echo "Start frontend: node frontend.js"
+    echo "Open dashboard: http://localhost:3000"
   '';
 }
