@@ -37,9 +37,9 @@ python3 app.py
 ```
 
 **Available examples:**
-- `examples/python-dev-env/` - Flask API with actual code
-- `examples/nodejs-dev-env/` - Express server with actual code  
-- `examples/fullstack-stack/` - Combined example (advanced)
+- `examples/python-dev-env/` - GitHub repo analyzer CLI (requests + rich)
+- `examples/nodejs-dev-env/` - Express server (basic; optional to extend)  
+- `examples/fullstack-stack/` - System monitor (Python stats API + Node dashboard)
 
 Each example has:
 - ✅ Real code files (no copy-paste in terminal)

@@ -6,7 +6,7 @@
 
 ## Scenario
 
-You need to develop a Flask API with specific package versions. Instead of `pip install`, use Nix.
+Build a CLI that fetches GitHub repository stats (stars, forks, issues) using `requests` and displays them nicely with `rich`. Instead of `pip install`, use Nix to get the exact Python + libraries.
 
 ## The shell.nix
 
@@ -16,18 +16,16 @@ Create `shell.nix` in your project:
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  name = "python-dev";
+  name = "python-github-analyzer";
   
   buildInputs = with pkgs; [
     python3
-    python3Packages.pip
-    python3Packages.flask
     python3Packages.requests
-    python3Packages.python-dotenv
+    python3Packages.rich
   ];
   
   shellHook = ''
-    echo "Python dev environment loaded"
+    echo "🐍 Python GitHub Analyzer environment loaded"
     python3 --version
   '';
 }
@@ -39,29 +37,12 @@ pkgs.mkShell {
 # From your project directory
 nix-shell
 
-# You now have Python and packages available
-python3 -c "import flask; print(flask.__version__)"
-
-# Create your Flask app
-cat > app.py << 'EOF'
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return 'Hello from Nix!'
-
-if __name__ == '__main__':
-    app.run(debug=True)
-EOF
-
-# Run it
-python3 app.py
-
-# Exit when done
-exit
+# Analyze a repo
+python3 app.py octocat/Hello-World
+python3 app.py torvalds/linux
 ```
+
+Expected output: repo info + stats in a nicely formatted table. If a repo has no license, it shows "None" (handled safely).
 
 ## Find More Packages
 
@@ -76,7 +57,7 @@ nix search nixpkgs python3Packages.requests
 
 ## Real Example
 
-See a complete working example in `examples/python-dev-env/`
+See the working example in `examples/python-dev-env/` (app is already written; just run it).
 
 ---
 

@@ -12,7 +12,9 @@ Instead of `apt-get install`, `brew install`, or creating `shell.nix`, just use 
 
 You heard about a cool tool (like `docker`, `terraform`, or a fancy CLI tool) but don't want to install it permanently. With Nix, you can try it instantly.
 
-## The Command
+## The Commands
+
+### 1) `nix run` (run a single command immediately)
 
 Use `nix run` to run a package from nixpkgs directly:
 
@@ -31,6 +33,27 @@ nix run nixpkgs#httpie -- --help
 
 # Try nodejs without installing it
 nix run nixpkgs#nodejs_20 -- --version
+
+### 2) `nix-shell -p <package>` (quick throwaway shell)
+
+```bash
+# Open a temporary shell with a single package
+nix-shell -p nodejs_20
+node --version
+exit  # Node disappears when you exit
+
+# Multiple packages
+nix-shell -p docker docker-compose sqlite
+docker --version
+sqlite3 --version
+exit
+```
+
+Same idea with the new syntax:
+
+```bash
+nix shell nixpkgs#nodejs_20 nixpkgs#docker
+```
 ```
 
 ## Interactive Examples - See It Work
