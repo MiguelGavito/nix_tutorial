@@ -2,13 +2,23 @@
 
 {
   # Home Manager needs this version
-  home.stateVersion = "23.11";
+  home.stateVersion = "25.11";
 
   # Add packages to your system
   home.packages = with pkgs; [
     kew       # Terminal music player
     ytmdl     # YouTube music downloader with metadata
   ];
+
+  /* Alternatively, you can specify packages like this:
+  
+  home.packages = [
+    pkgs.kew
+    pkgs.ytmdl 
+  ];
+
+  is the same
+  */
 
   # Configure zsh shell (optional but recommended)
   programs.zsh = {

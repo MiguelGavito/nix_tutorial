@@ -30,6 +30,8 @@ home-manager --version
 
 **If command not found:** Install Home Manager:
 
+home manager documentation and install: https://home-manager.dev/
+
 ```bash
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
