@@ -8,11 +8,43 @@
 
 You want to test a terminal music player and downloader without committing to your system. Download a song, play it, verify it works—then decide to keep it or remove it. All managed through declarative configuration.
 
-## Prerequisites Check
+## Prerequisites Setup
 
-Before starting, verify you have:
-- Nix installed
-- Home Manager set up
+### 1. Nix Installed
+
+Verify Nix is working:
+```bash
+nix --version
+```
+
+If not installed, follow the [Installation Guide](00-installation.md)
+
+### 2. Home Manager Installed
+
+Check if Home Manager is already set up:
+```bash
+home-manager --version
+```
+
+**If you see a version number:** Great! Skip to [Part 1](#part-1-search-programs-in-nixpkgs)
+
+**If command not found:** Install Home Manager:
+
+```bash
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+nix-shell '<home-manager>' -A install
+```
+
+This creates `~/.config/home-manager/home.nix` with basic configuration.
+
+### 3. Verify Home Manager Works
+
+```bash
+home-manager switch
+```
+
+If successful, you're ready! If there are errors, Home Manager likely detected conflicting config—that's safe, it won't break anything.
 
 ## Part 1: Search Programs in nixpkgs
 
