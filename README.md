@@ -18,7 +18,7 @@ Once Nix is installed, follow these tutorials in order:
 4. **[Full-Stack Example](docs/04-fullstack-dev-env.md)** - Python + Node together
 5. **[Quick Package Testing](docs/05-quick-package-testing.md)** - Try tools without installing
 6. **[Platform Differences](docs/06-platform-differences.md)** - Linux, macOS, WSL
-
+7. **[Home-Manager](docs/07-testing-nixpkgs-programs.md)** - Try Home-Manager and nixpkgs
 ### Step 3: Try Working Examples
 
 All examples have ACTUAL code files ready to run:
@@ -40,6 +40,7 @@ python3 app.py
 - `examples/python-dev-env/` - GitHub repo analyzer CLI (requests + rich)
 - `examples/nodejs-dev-env/` - Express server (basic; optional to extend)  
 - `examples/fullstack-stack/` - System monitor (Python stats API + Node dashboard)
+- `examples/testing-github-projects/` - Test software before installing with Home Manager.
 
 Each example has:
 - ✅ Real code files (no copy-paste in terminal)
